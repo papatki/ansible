@@ -1,0 +1,19 @@
+-
+    name: 'Create users'
+    hosts: all
+    vars:
+      users:
+        - name: user1
+          shell: /bin/bash
+        - name: user2
+          shell: /bin/bash
+        - name: user3
+          shell: /bin/sh
+    tasks:
+        -
+           name: 'Create users'
+           user:
+             name: '{{ item.name }}'
+             state: present
+             shell: '{{ item.shell }}'
+           with_items: "{{users}}"
