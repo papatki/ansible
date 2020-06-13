@@ -1,6 +1,7 @@
 -
     name: 'Create users'
     hosts: all
+    become: true
     vars:
       users:
         - name: user1
