@@ -1,0 +1,8 @@
+-
+    name: 'Execute a script.'
+    hosts: all
+    tasks:
+        -
+           name: 'Execute a script on all target servers'
+           script:
+             cmd: /home/osboxes/scripts/demo_script.sh
